@@ -4,3 +4,4 @@
 	Simply drag'n'drop video file onto script file.
  	This script uses ffmpeg.exe, you can find it on the web.
 
+[Grab it here: ffmpeg-git-full.7z](https://www.gyan.dev/ffmpeg/builds/ffmpeg-git-full.7z)
