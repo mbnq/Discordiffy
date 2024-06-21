@@ -4,7 +4,7 @@
 REM 	This simple script converts video file until it gets under 24.80MB 
 REM 	to fit into free Discord video upload size limit.
 REM		Simply drag'n'drop video file onto script file.
-REM 	This script uses ffmpeg.exe, you can find it on the web.
+REM 	This script uses ffmpeg.exe, you can find it on the web. 
 
 @echo off
 setlocal enabledelayedexpansion
