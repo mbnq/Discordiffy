@@ -46,7 +46,7 @@ set "output=%~dpn1_discordiffied.mp4"
 if exist !output! del /Q /f !output!
 
 echo !cc!Converting file. Please wait...
-bin\ffmpeg -loglevel warning -stats -i "!input!" -b:v 2M -bufsize 2M -maxrate 2M -vf "scale=-2:1080" -c:a aac -b:a 192k "!output!"
+	!ffmpegPath! -loglevel warning -stats -i "!input!" -b:v 2M -bufsize 2M -maxrate 2M -vf "scale=-2:1080" -c:a aac -b:a 192k "!output!"
 
 if %ERRORLEVEL% neq 0 (
 	echo !cc!Something went wrong...
@@ -56,7 +56,7 @@ if %ERRORLEVEL% neq 0 (
 for %%I in ("!output!") do set /a size=%%~zI/1048576
 if !size! gtr 24 (
     echo !cc!File size exceeded 24.80 MB, adjusting bitrate.
-    bin\ffmpeg -y -loglevel warning -stats -i "!input!" -fs 24M -c:v libx264 -crf 23 -preset veryslow -c:a aac -b:a 192k "!output!"
+    !ffmpegPath! -y -loglevel warning -stats -i "!input!" -fs 24M -c:v libx264 -crf 23 -preset veryslow -c:a aac -b:a 192k "!output!"
 )
 
 if %ERRORLEVEL% neq 0 (
