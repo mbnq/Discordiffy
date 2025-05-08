@@ -1,7 +1,7 @@
 :: mbnq00@gmail.com
 :: https://www.mbnq.pl/
 
-REM 	This simple script converts video file until it gets under 24.80MB 
+REM 	This simple script converts video file until it gets under 10.00MB 
 REM 	to fit into free Discord video upload size limit.
 REM		Simply drag'n'drop video file onto script file.
 REM 	This script uses ffmpeg.exe, you can find it on the web. 
@@ -37,8 +37,8 @@ if not exist "!input!" (
 )
 
 for %%I in ("!input!") do set /a input_size=%%~zI
-if !input_size! leq 25963520 (
-    echo !cc!Input file is already under 25MB.
+if !input_size! leq 10471117 (
+    echo !cc!Input file is already under 10MB.
 	goto fail
 )
 
@@ -54,9 +54,9 @@ if %ERRORLEVEL% neq 0 (
 )
 
 for %%I in ("!output!") do set /a size=%%~zI/1048576
-if !size! gtr 24 (
-    echo !cc!File size exceeded 24.80 MB, adjusting bitrate.
-    !ffmpegPath! -y -loglevel warning -stats -i "!input!" -fs 24M -c:v libx264 -crf 23 -preset veryslow -c:a aac -b:a 192k "!output!"
+if !size! gtr 10 (
+    echo !cc!File size exceeded 10.00 MB, adjusting bitrate.
+    !ffmpegPath! -y -loglevel warning -stats -i "!input!" -fs 10M -c:v libx264 -crf 28 -preset veryslow -c:a aac -b:a 128k "!output!"
 )
 
 if %ERRORLEVEL% neq 0 (
