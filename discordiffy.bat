@@ -89,7 +89,7 @@ exit /b 0
 	echo *                                                       *
 	echo *                   Discordiffy                         *
 	echo *                                                       *
-	echo *                                        mbnq.pl 2024   *
+	echo *                                        mbnq.pl 2025   *
 	echo *                                                       *
 	echo *********************************************************
 	echo.
